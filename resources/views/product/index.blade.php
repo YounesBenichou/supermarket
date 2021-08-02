@@ -36,6 +36,9 @@
               <a href="{{route('product.edit',$item)}}" class="btn btn-sm btn-primary">Edit</a>
             </div>
             <div class="col-2">
+              <a href="{{route('soft.delete',$item->id)}}" class="btn btn-sm btn-warning" style="width: 100px;">Soft Delete</a>
+            </div>
+            {{-- <div class="col-2">
               <a>
                 <form action="{{route('product.destroy',$item)}}" method="POST">
                   @csrf
@@ -43,7 +46,7 @@
                   <button type="submit" class="btn btn-sm btn-danger"> Delete </button>
                 </form>
               </a>
-            </div>
+            </div> --}}
           </div>
           {{-- <div class="row justify-content-center ">
             <div class="col">

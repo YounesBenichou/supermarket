@@ -101,4 +101,36 @@ class ProductController extends Controller
         ->with('sucess','product is updated successfuly');
         
     }
+
+    public function softDelete($id)
+    {
+        $product = Product::find($id);
+        $product->delete();
+        return redirect()->route('product.index')
+        ->with('success','product is deleted successfuly with soft');       
+    }
+
+
+    public function trashedProducts()
+    {
+        // $products = Product::onlyTrashed()->latest()->paginate(4);
+        $products = Product::onlyTrashed()->get();
+        return view('product.trash')->with('products', $products);   
+    }
+
+    public function restoreProduct($id)
+    {
+        $product = Product::onlyTrashed()->where('id',$id)->restore();
+        return redirect()->route('product.index')
+        ->with('success','product is restored successfuly');
+        
+    }
+    
+    public function forceDelete($id)
+    {
+        $product = Product::onlyTrashed()->where('id',$id)->forceDelete();
+        return redirect()->route('product.index')
+        ->with('success','product is deleted successfuly');
+        
+    }
 }

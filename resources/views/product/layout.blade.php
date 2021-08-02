@@ -21,6 +21,8 @@
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
           <li><a href="{{route('product.index')}}" class="nav-link px-4 link-secondary btn btn-outline-primary me-2"" >Home</a></li>
           <li><a href="{{route('product.create')}}" class="nav-link px-4 link-secondary btn btn-outline-primary me-2">Add product</a></li>
+          <li><a href="{{route('trash.products')}}" class="nav-link px-4 link-secondary btn btn-outline-primary me-2">Trash</a></li>
+
           <!-- <li><a href="" class="nav-link px-2 link-dark">Pricing</a></li>
           <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
           <li><a href="#" class="nav-link px-2 link-dark">About</a></li> -->
